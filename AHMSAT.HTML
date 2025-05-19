@@ -147,9 +147,9 @@
 
   <script>
     const dataTransporter = [
-      { transporter: "PT. Angkasa", plat: "B1234CD", hp: "6281234567890" },
-      { transporter: "PT. Samudra", plat: "D5678EF", hp: "6282223344556" },
-      { transporter: "PT. Logistik Makmur", plat: "F9012GH", hp: "6283334455667" }
+      { transporter: "PT.ANS", plat: "B 1234 CD", hp: "6282211666015" },
+      { transporter: "PT.LLG", plat: "D 1234 CD", hp: "6281314249058" },
+      { transporter: "PT.SSF", plat: "F 1234 CD", hp: "6283334455667" }
     ];
 
     let waitingList = JSON.parse(localStorage.getItem("waitingList") || "[]");
@@ -333,7 +333,7 @@
         const index = parseInt(cb.dataset.index);
         const item = prosesList[index];
         const rit = item.rit || "RIT 1";
-        const pesan = `*[Info Kontainer]*\nTanggal: ${now}\nTransporter: ${item.transporter}\nNopol: ${item.plat}\nRIT: ${rit}\nSedang dalam proses stuffing.`;
+        const pesan = `*[Info Kontainer]*\nTanggal: ${now}\nTransporter: ${item.transporter}\nNopol: ${item.plat}\nRIT: ${rit}\nUntuk Segera Masuk Area Muat.`;
         const waUrl = `https://wa.me/${item.hp}?text=${encodeURIComponent(pesan)}`;
         window.open(waUrl, '_blank');
         logArea.innerHTML += `✔️ WA dikirim ke ${item.hp} (RIT: ${rit})<br>`;
